@@ -1,17 +1,35 @@
 * {
     font-family: 'Cabin', sans-serif;
+    
   }
   
-  body {
-    min-height: 100vh;
-    background-image: url("../images/backgound.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: black;
+body {
+min-height: 100vh;
+background-image: url("../images/backgound.png");
+background-size: cover;
+background-repeat: no-repeat;
+color: black;
+}
+
+.initialText {
+font-size: 20px;
+color: white;
+letter-spacing: 1.5px;
+}
+
+header {
+    padding: 70px 0px;
+    font-size: 85px;
+    color: white;
+    /* text-shadow: 3px 3px 7px #313131; */
+    letter-spacing: 2px;
   }
 
-  .initialText {
-	font-size: 20px;
-	color: white;
-	letter-spacing: 1.5px;
+#cheese {
+    border: white 2px solid;
+    text-align: center;
+    /* box-shadow: 3px 3px 7px #313131; */
+    background-color: none;
+
+
 }
