@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+    $("#cheese").delay(1000).animate({ opacity: 1 }, 600)
+    $(".mainArea").delay(2000).animate({ opacity: 1 }, 700)
     // VARIABLES:
     // declare vars for startScreen,
     // gameHTML, correct, incorrect, unanswered
@@ -138,7 +141,7 @@ $(document).ready(function() {
         // there may have to be a seperate function for the timeout if player doesn't answer in time, thus adding to the unanswered count
     function generateWin() {
         correct++;
-        var correctAnswerText = "<p class='correctText text-center'>CORRECT!</p>";
+        var correctAnswerText = "<p class='correctText text-center'>Correct!</p>";
         var imgHTML = "<img class='center-block imgCorrect' src=''>";
         gameHTML = correctAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -147,7 +150,7 @@ $(document).ready(function() {
 
     function generateLoss() {
         incorrect++;
-        var wrongAnswerText = "<p class='wrongText text-center'>INCORRECT</p>";
+        var wrongAnswerText = "<p class='wrongText text-center'>Incorrect</p>";
         var imgHTML = "<img class='center-block imgWrong' src=''>";
         gameHTML = wrongAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -180,7 +183,79 @@ $(document).ready(function() {
             $("#timer").html(counter);
         }
     }
+    function nextDisplay() {
+		if (questionCounter < questionArray.length - 1) {
+			questionCounter++;
+			generateHTML();
+			counter = 20;
+			timer();
+		} else {
+			finalScreen();
+		}
+    }
+    
+    function finalScreen() {
+		var finishedText = "<p class='finishedText text-center'>Here's how you did!</p>";
+		var summaryCorrectHTML = "<p class='summaryCorrect text-center'>Correct Answers: " + correct + "</p>";
+		var summaryWrongHTML = "<p class='summaryWrong text-center'>Wrong Answers: " + incorrect + "</p>";
+		var summaryUnansweredHTML = "<p class='summaryUnanswered text-center'>Unanswered: " + unanswered + "</p>";
+		var resetButtonHTML = "<button class='resetButton btn btn-primary btn-lg btn-block text-center' type='button'>PLAY AGAIN</button>";
+		gameHTML = finishedText + summaryCorrectHTML + summaryWrongHTML + summaryUnansweredHTML + resetButtonHTML;
+		$(".mainArea").html(gameHTML);
+    }
+    
+    function resetGame() {
+		questionCounter = 0;
+		correct = 0;
+		incorrect = 0;
+		unanswered = 0;
+		counter = 20;
+		generateHTML();
+		timer();
+	}
 
-    // BUTTON Functions:
+	// Function that creates the start button and initial screen
+	function initialScreen() {
+		var initialText = "<p class='initialText text-center'>A quiz to test your knowledge of all things cheese!</p> <p class='initialText text-center'>There are 10 questions total and you will have 20 seconds to answer each one. Good luck!</p>";
+		var startButtonHTML = "<button class='startButton btn btn-primary btn-lg btn-block text-center' type='button'>Start Quiz</button>";
+		startScreen = initialText + startButtonHTML;
+		$(".mainArea").html(startScreen);
+    }
+     // BUTTON Functions:
         // will need seperate click event functions for startGame, answer, resetGame
+
+
+    // When the start button is clicked:
+	$("body").on("click", ".startButton", function(event){ 
+		generateHTML();
+		timer();
+	});
+
+	// When an answer is clicked:
+	$("body").on("click", ".answer", function(event){
+		selectedAnswer = $(this).attr("isCorrect");
+		console.log(selectedAnswer);
+
+		if (selectedAnswer === "true") { // evaluates if this is the correct answer
+			clearInterval(clock);
+		 	generateWin();
+		} else { 	// then it's the wrong answer
+			clearInterval(clock);
+			generateLoss();
+		}
+
+	}); 
+
+	// When the Play Again button is clicked:
+	$("body").on("click", ".resetButton", function(event){
+		resetGame();
+	}); 
+
+    initialScreen();
+    
+    
+    
+    console.log($("#cheese"))
+    
+   
 });

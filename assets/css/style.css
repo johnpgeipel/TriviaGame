@@ -1,5 +1,5 @@
 * {
-    font-family: 'Cabin', sans-serif;
+    /* font-family: 'Cabin', sans-serif; */
     
   }
   
@@ -26,10 +26,49 @@ header {
   }
 
 #cheese {
-    border: white 2px solid;
+    border: white 4px solid;
     text-align: center;
     /* box-shadow: 3px 3px 7px #313131; */
-    background-color: none;
+    background-color: none; 
+    padding-bottom: 10px;
+    
 
+
+}
+
+.timerText, .correctText, .incorrectText {
+    font-size: 30px;
+    font-family: 'Archivo Narrow', sans-serif;
+    color: rgb(178, 214, 78);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.startButton {
+    /* background-color: #fe6f05 */
+}
+
+.questionText {
+    font-size: 30px;
+    color: white;
+}
+
+/* .correctText {
+    font-size: 30px;
+    color: brown;
+    font-family: 'Archivo Narrow', sans-serif;
+} */
+
+#cheese {
+    opacity:0;
+    transition: opacity 2s;
+    -webkit-transition: opacity 2s;
+    margin-top: 25px;
+    text-align: center;
+}
+.mainArea {
+    opacity:0;
+    transition: opacity 2s;
+    -webkit-transition: opacity 2s;
 
 }
