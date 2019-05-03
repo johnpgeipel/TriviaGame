@@ -36,16 +36,19 @@ header {
 
 }
 
-.timerText, .correctText, .incorrectText {
+.timerText, .correctText, .wrongText {
     font-size: 30px;
     font-family: 'Archivo Narrow', sans-serif;
     color: rgb(178, 214, 78);
-    font-weight: bold;
+    /* font-weight: bold; */
     letter-spacing: 3px;
 }
 
 .startButton {
-    /* background-color: #fe6f05 */
+    margin-top: 50px;
+    /* opacity:0;
+    transition: opacity 2s;
+    -webkit-transition: opacity 2s; */
 }
 
 .questionText {
@@ -71,4 +74,17 @@ header {
     transition: opacity 2s;
     -webkit-transition: opacity 2s;
 
+}
+
+.finishedText {
+    font-size: 30px;
+    font-family: 'Archivo Narrow', sans-serif;
+    color: rgb(178, 214, 78);
+    /* font-weight: bold; */
+    letter-spacing: 3px;
+}
+
+.summaryCorrect, .summaryWrong, .summaryUnanswered {
+    color: white;
+    font-size: 20px;
 }

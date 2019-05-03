@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
-    $("#cheese").delay(1000).animate({ opacity: 1 }, 600)
-    $(".mainArea").delay(2000).animate({ opacity: 1 }, 700)
+    $("#cheese").delay(500).animate({ opacity: 1 }, 700)
+    $(".mainArea").delay(1000).animate({ opacity: 1 }, 700)
+    $(".startButton").delay(500).animate({ opacity: 1 }, 700)
     // VARIABLES:
     // declare vars for startScreen,
     // gameHTML, correct, incorrect, unanswered
@@ -19,10 +20,10 @@ $(document).ready(function() {
     // QUESTION_ANSWER ARRAY:
         // build question array with answer array containing values for answer text & boolean
         // array should contain question: "lorem", answer: [string]
-        // array should contain the multiple choices and a boolean value
+        // array should contain the multiple choices and a boolean value 
     var questionArray = [
         { 	
-            question: "Some question",
+            question: 'What was the first name-controlled ("A.O.C.") cheese?',
             answers: [
                 {text: "Some Answer", isCorrect: true},
                 {text: "Some Answer", isCorrect: false},
@@ -199,7 +200,7 @@ $(document).ready(function() {
 		var summaryCorrectHTML = "<p class='summaryCorrect text-center'>Correct Answers: " + correct + "</p>";
 		var summaryWrongHTML = "<p class='summaryWrong text-center'>Wrong Answers: " + incorrect + "</p>";
 		var summaryUnansweredHTML = "<p class='summaryUnanswered text-center'>Unanswered: " + unanswered + "</p>";
-		var resetButtonHTML = "<button class='resetButton btn btn-primary btn-lg btn-block text-center' type='button'>PLAY AGAIN</button>";
+		var resetButtonHTML = "<button class='resetButton btn btn-success btn-lg btn-block text-center' type='button'>PLAY AGAIN</button>";
 		gameHTML = finishedText + summaryCorrectHTML + summaryWrongHTML + summaryUnansweredHTML + resetButtonHTML;
 		$(".mainArea").html(gameHTML);
     }
@@ -217,7 +218,7 @@ $(document).ready(function() {
 	// Function that creates the start button and initial screen
 	function initialScreen() {
 		var initialText = "<p class='initialText text-center'>A quiz to test your knowledge of all things cheese!</p> <p class='initialText text-center'>There are 10 questions total and you will have 20 seconds to answer each one. Good luck!</p>";
-		var startButtonHTML = "<button class='startButton btn btn-primary btn-lg btn-block text-center' type='button'>Start Quiz</button>";
+		var startButtonHTML = "<button class='startButton btn btn-success btn-lg btn-block text-center' type='button'>Start Quiz</button>";
 		startScreen = initialText + startButtonHTML;
 		$(".mainArea").html(startScreen);
     }
