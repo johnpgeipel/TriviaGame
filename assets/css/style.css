@@ -21,7 +21,7 @@ header {
     padding: 50px 0px;
     font-size: 85px;
     color: white;
-    /* text-shadow: 3px 3px 7px #313131; */
+    
     letter-spacing: 2px;
   }
 
@@ -31,12 +31,14 @@ header {
     /* box-shadow: 3px 3px 7px #313131; */
     background-color: none; 
     padding-bottom: 10px;
+    padding: 20px;
+    
     
 
 
 }
 
-.timerText, .correctText, .wrongText {
+.timerText, .correctText, .wrongText, .timeOutText {
     font-size: 30px;
     font-family: 'Archivo Narrow', sans-serif;
     color: rgb(178, 214, 78);
@@ -52,8 +54,10 @@ header {
 }
 
 .questionText {
-    font-size: 30px;
+    font-size: 25px;
     color: white;
+    line-height: 30px;
+    margin-bottom: 20px;
 }
 
 /* .correctText {
@@ -68,6 +72,7 @@ header {
     -webkit-transition: opacity 2s;
     margin-top: 25px;
     text-align: center;
+    line-height: 85px;
 }
 .mainArea {
     opacity:0;
@@ -87,4 +92,36 @@ header {
 .summaryCorrect, .summaryWrong, .summaryUnanswered {
     color: white;
     font-size: 20px;
+}
+
+@media screen and (max-width: 575px) {
+    header {
+        font-size: 65px;
+        
+    }
+    body {
+        
+        background-image: url("../images/backgound_575.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+       
+        }
+}
+
+@media screen and (max-width: 360px) {
+    header {
+        font-size: 65px;
+        
+    }
+    body {
+        
+        background-image: url("../images/backgound_360.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+        
+    }
+   
+    
+
 }

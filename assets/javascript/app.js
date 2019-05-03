@@ -160,7 +160,7 @@ $(document).ready(function() {
     // TIMEOUT Function... for unanswered questions
     function generateLossAtTimeOut() {
 		unanswered++;
-		var timeOutText = "<p class='timeOutText text-center'>TIME'S UP!</p>";
+		var timeOutText = "<p class='timeOutText text-center'>Time's up!</p>";
 		var imgHTML = "<img class='center-block imgWrong' src=''>";
 		gameHTML =  timeOutText + imgHTML;
 		$(".mainArea").html(gameHTML);
@@ -242,7 +242,8 @@ $(document).ready(function() {
 		 	generateWin();
 		} else { 	// then it's the wrong answer
 			clearInterval(clock);
-			generateLoss();
+            generateLoss();
+            
 		}
 
 	}); 
