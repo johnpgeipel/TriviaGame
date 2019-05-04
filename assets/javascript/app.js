@@ -15,7 +15,8 @@ $(document).ready(function() {
 	var questionCounter = 0;
 	var counter = 20;
 	var clock;
-	var selecterAnswer;
+    var selecterAnswer;
+    
 
     // QUESTION_ANSWER ARRAY:
         // build question array with answer array containing values for answer text & boolean
@@ -235,14 +236,14 @@ $(document).ready(function() {
 	// When an answer is clicked:
 	$("body").on("click", ".answer", function(event){
 		selectedAnswer = $(this).attr("isCorrect");
-		console.log(selectedAnswer);
+		
 
 		if (selectedAnswer === "true") { // evaluates if this is the correct answer
-			clearInterval(clock);
+            clearInterval(clock);
 		 	generateWin();
 		} else { 	// then it's the wrong answer
 			clearInterval(clock);
-            generateLoss();
+            generateLoss(); 
             
 		}
 
