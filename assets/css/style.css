@@ -14,7 +14,8 @@ color: black;
 .initialText {
 font-size: 20px;
 color: white;
-letter-spacing: 1.5px;
+/* letter-spacing: 1.5px; */
+font-family: Montserrat, sans-serif;
 }
 
 header {
@@ -26,7 +27,8 @@ header {
   }
 
 #cheese {
-    border: white 4px solid;
+    border: white 3px solid;
+    border-radius: 10px;
     text-align: center;
     /* box-shadow: 3px 3px 7px #313131; */
     background-color: none; 
@@ -34,31 +36,49 @@ header {
     padding: 20px;
     
     
+    
+    
 
 
 }
 
 .timerText, .correctText, .wrongText, .timeOutText {
-    font-size: 30px;
-    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 20px;
+    /* font-family: 'Archivo Narrow', sans-serif; */
     /* color: rgb(178, 214, 78); */
-    color: #4a2500;
-    font-weight: bold;
-    letter-spacing: 3px;
+    color: white;
+    padding: 10px; 
+    /* letter-spacing: 3px; */
+    background-color: #5cb85c;
+    border-radius: 5px;
+    font-family: Montserrat, sans-serif;
+    
 }
 
 .startButton {
     margin-top: 50px;
+    font-family: Montserrat, sans-serif;
     /* opacity:0;
     transition: opacity 2s;
     -webkit-transition: opacity 2s; */
 }
+.answer {
+    background-color: white;
+}
+
+.answer:hover {
+    background-color: rgb(250, 235, 167);
+
+}
+
+)
 
 .questionText {
     font-size: 25px;
     color: white;
     line-height: 30px;
     margin-bottom: 20px;
+    font-family: Montserrat, sans-serif;
 }
 
 /* .correctText {
@@ -68,13 +88,12 @@ header {
 } */
 
 #cheese {
-    opacity:0;
-    transition: opacity 2s;
-    -webkit-transition: opacity 2s;
+
     margin-top: 25px;
     text-align: center;
     line-height: 85px;
 }
+
 .mainArea {
     opacity:0;
     transition: opacity 2s;
@@ -84,15 +103,16 @@ header {
 
 .finishedText {
     font-size: 30px;
-    font-family: 'Archivo Narrow', sans-serif;
-    color: #4a2500;
-    /* font-weight: bold; */
-    letter-spacing: 3px;
+    color: mediumseagreen;
+    font-family: Montserrat, sans-serif;
+    
+    
 }
 
 .summaryCorrect, .summaryWrong, .summaryUnanswered {
     color: white;
     font-size: 20px;
+    font-family: Montserrat, sans-serif;
 }
 
 @media screen and (max-width: 575px) {
@@ -107,6 +127,10 @@ header {
         background-repeat: no-repeat;
        
         }
+    #cheese {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -121,6 +145,10 @@ header {
         background-repeat: no-repeat;
         
         
+    }
+    #cheese {
+        margin-left: 15px;
+        margin-right: 15px;
     }
    
     

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-    $("#cheese").delay(500).animate({ opacity: 1 }, 700)
-    $(".mainArea").delay(1000).animate({ opacity: 1 }, 700)
+    // $("#cheese").delay(500).animate({ opacity: 1 }, 700)
+    // $(".mainArea").delay(1000).animate({ opacity: 1 }, 700)
     $(".startButton").delay(500).animate({ opacity: 1 }, 700)
     // VARIABLES:
     // declare vars for startScreen,
@@ -114,6 +114,7 @@ $(document).ready(function() {
             ]
         },
     ]
+    var answerArray = ["Roquefort", "It contains maggots.", "Epoisses", "Mimolette", "Upland Creamery Pleasant Ridge Reserve",       "Tetilla", "The stomach of an innocent calf", "Milk, starter culture, rennet, salt", "England", "Wisconsin, Baby!"];
 
     // HTML SET_UP Functions:
     // write function for generateHTML
@@ -131,7 +132,9 @@ $(document).ready(function() {
             answerButton.attr("isCorrect", questionArray[questionCounter].answers[i].isCorrect);
             answerButton.html(questionArray[questionCounter].answers[i].text);
             $(".mainArea").append(answerButton);
+            
         }
+        
     }
 
      // WIN & LOSS Funcitons:
@@ -152,7 +155,7 @@ $(document).ready(function() {
 
     function generateLoss() {
         incorrect++;
-        var wrongAnswerText = "<p class='wrongText text-center'>Incorrect</p>";
+        var wrongAnswerText = "<p class='wrongText text-center'>Incorrect<br><br>The correct answer is:<br>" + answerArray[0] + "<br><br></p>";
         var imgHTML = "<img class='center-block imgWrong' src=''>";
         gameHTML = wrongAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -161,7 +164,7 @@ $(document).ready(function() {
     // TIMEOUT Function... for unanswered questions
     function generateLossAtTimeOut() {
 		unanswered++;
-		var timeOutText = "<p class='timeOutText text-center'>Time's up!</p>";
+		var timeOutText = "<p class='timeOutText text-center'>Time's up!<br><br>The correct answer is:<br>" + answerArray[0] + "<br><br></p>";
 		var imgHTML = "<img class='center-block imgWrong' src=''>";
 		gameHTML =  timeOutText + imgHTML;
 		$(".mainArea").html(gameHTML);
@@ -193,7 +196,8 @@ $(document).ready(function() {
 			timer();
 		} else {
 			finalScreen();
-		}
+        }
+        
     }
     
     function finalScreen() {
@@ -225,7 +229,21 @@ $(document).ready(function() {
     }
      // BUTTON Functions:
         // will need seperate click event functions for startGame, answer, resetGame
-
+    function displayAnswer() {
+        // for (var i = 0; i < answerArray.length; i++);
+        // var answerText = answerArray[x];
+        // var x = 0;
+        
+        var correctText = "<p class='correctText text-center'>The correct answer is: " + answerArray[0] + "</p>";
+        // var answerText = answerArray[0];
+        // var correctHTML = correctText + answerText
+        // $(".mainArea").html(correctText);
+        
+        // console.log(i);
+        answerArray.push(answerArray.shift());
+        // console.log(answerText)
+        console.log(answerArray)
+    }
 
     // When the start button is clicked:
 	$("body").on("click", ".startButton", function(event){ 
@@ -235,23 +253,31 @@ $(document).ready(function() {
 
 	// When an answer is clicked:
 	$("body").on("click", ".answer", function(event){
-		selectedAnswer = $(this).attr("isCorrect");
+        selectedAnswer = $(this).attr("isCorrect");
+        
 		
 
 		if (selectedAnswer === "true") { // evaluates if this is the correct answer
             clearInterval(clock);
-		 	generateWin();
+             generateWin();
+             displayAnswer();
+             
 		} else { 	// then it's the wrong answer
 			clearInterval(clock);
-            generateLoss(); 
+            generateLoss();
+            displayAnswer();
+            
             
 		}
 
 	}); 
-
+    
+    
 	// When the Play Again button is clicked:
 	$("body").on("click", ".resetButton", function(event){
-		resetGame();
+        resetGame();
+        
+        
 	}); 
 
     initialScreen();
