@@ -144,7 +144,7 @@ $(document).ready(function() {
         // there may have to be a seperate function for the timeout if player doesn't answer in time, thus adding to the unanswered count
     function generateWin() {
         correct++;
-        var correctAnswerText = "<p class='correctText text-center'>Correct!</p>";
+        var correctAnswerText = "<p class='correctText text-center'><strong>Correct!</strong></p>";
         var imgHTML = "<img class='center-block imgCorrect' src=''>";
         gameHTML = correctAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -153,7 +153,7 @@ $(document).ready(function() {
 
     function generateLoss() {
         incorrect++;
-        var wrongAnswerText = "<p class='wrongText text-center'>Incorrect<br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
+        var wrongAnswerText = "<p class='wrongText text-center'><strong>Incorrect</strong><br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
         var imgHTML = "<img class='center-block imgWrong' src=''>";
         gameHTML = wrongAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -162,7 +162,7 @@ $(document).ready(function() {
     // TIMEOUT Function... for unanswered questions
     function generateLossAtTimeOut() {
 		unanswered++;
-		var timeOutText = "<p class='timeOutText text-center'>Time's up!<br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
+		var timeOutText = "<p class='timeOutText text-center'><strong>Time's up!</strong><br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
 		var imgHTML = "<img class='center-block imgWrong' src=''>";
 		gameHTML =  timeOutText + imgHTML;
 		$(".mainArea").html(gameHTML);
