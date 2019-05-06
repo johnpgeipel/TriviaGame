@@ -24,7 +24,7 @@ $(document).ready(function() {
         { 	
             question: 'What was the first name-controlled ("A.O.C.") cheese?',
             answers: [
-                {text: "Camambert", isCorrect: false},
+                {text: "Camembert", isCorrect: false},
                 {text: "Roquefort", isCorrect: true},
                 {text: "Chabrin", isCorrect: false},
                 {text: "Epoisses", isCorrect: false}
@@ -112,7 +112,7 @@ $(document).ready(function() {
             ]
         },
     ]
-    var answerArray = ["Roquefort", "It contains maggots.", "Epoisses", "Mimolette", "Upland Creamery Pleasant Ridge Reserve",       "Tetilla", "The stomach of an innocent calf", "Milk, starter culture, rennet, salt", "England", "Wisconsin, Baby!"];
+    var answerArray = ["Roquefort", "It contains maggots.", "Epoisses", "Mimolette", "Upland Creamery Pleasant Ridge Reserve", "Tetilla", "The stomach of an innocent calf", "Milk, starter culture, rennet, salt", "England", "Wisconsin, Baby!"];
 
     // HTML SET_UP Functions:
     // write function for generateHTML
