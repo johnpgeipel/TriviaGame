@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
-    // $("#cheese").delay(500).animate({ opacity: 1 }, 700)
-    // $(".mainArea").delay(1000).animate({ opacity: 1 }, 700)
-    // $(".startButton").delay(500).animate({ opacity: 1 }, 700)
+    
     // VARIABLES:
     // declare vars for startScreen,
     // gameHTML, correct, incorrect, unanswered
@@ -122,7 +120,7 @@ $(document).ready(function() {
         // generateHTML will include the timer and the question for the game
         // this will also need the answers displayed and looped thru
     function generateHTML() {
-        var timeRemainingText = "<p class='timerText text-center'>Time Remaining: <span id='timer'>20</span></p>";
+        var timeRemainingText = "<p class='timerText text-center'>Time Remaining : <span id='timer'>20</span></p>";
         var questionText = "<p class='questionText text-center'>" + questionArray[questionCounter].question + "</p>";
         gameHTML = timeRemainingText + questionText;
         $(".mainArea").html(gameHTML);
@@ -155,7 +153,7 @@ $(document).ready(function() {
 
     function generateLoss() {
         incorrect++;
-        var wrongAnswerText = "<p class='wrongText text-center'>Incorrect<br><br>The correct answer is:<br>" + answerArray[0] + "<br><br></p>";
+        var wrongAnswerText = "<p class='wrongText text-center'>Incorrect<br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
         var imgHTML = "<img class='center-block imgWrong' src=''>";
         gameHTML = wrongAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -164,7 +162,7 @@ $(document).ready(function() {
     // TIMEOUT Function... for unanswered questions
     function generateLossAtTimeOut() {
 		unanswered++;
-		var timeOutText = "<p class='timeOutText text-center'>Time's up!<br><br>The correct answer is:<br>" + answerArray[0] + "<br><br></p>";
+		var timeOutText = "<p class='timeOutText text-center'>Time's up!<br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
 		var imgHTML = "<img class='center-block imgWrong' src=''>";
 		gameHTML =  timeOutText + imgHTML;
 		$(".mainArea").html(gameHTML);
