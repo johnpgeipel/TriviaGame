@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // $("#cheese").delay(500).animate({ opacity: 1 }, 700)
     // $(".mainArea").delay(1000).animate({ opacity: 1 }, 700)
-    $(".startButton").delay(500).animate({ opacity: 1 }, 700)
+    // $(".startButton").delay(500).animate({ opacity: 1 }, 700)
     // VARIABLES:
     // declare vars for startScreen,
     // gameHTML, correct, incorrect, unanswered
