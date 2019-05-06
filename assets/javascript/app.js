@@ -161,12 +161,17 @@ $(document).ready(function() {
     }
     // TIMEOUT Function... for unanswered questions
     function generateLossAtTimeOut() {
+        
 		unanswered++;
 		var timeOutText = "<p class='timeOutText text-center'><strong>Time's up!</strong><br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
 		var imgHTML = "<img class='center-block imgWrong' src=''>";
 		gameHTML =  timeOutText + imgHTML;
 		$(".mainArea").html(gameHTML);
-		setTimeout(nextDisplay, 3000);  
+        setTimeout(nextDisplay, 3000);
+        displayAnswer();
+        console.log(answerArray)
+        
+        
 	}
 
     // TIMER Function:
