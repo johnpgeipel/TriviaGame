@@ -58,10 +58,12 @@ header {
 }
 .answer {
     background-color: white;
+    font-family: Montserrat, sans-serif;
+
 }
 
 .answer:hover {
-    background-color: rgb(250, 235, 167);
+    background-color: rgb(253, 225, 97);
 
 }
 
@@ -83,12 +85,12 @@ header {
     line-height: 85px;
 }
 
-.mainArea {
+/* .mainArea {
     opacity:0;
     transition: opacity 2s;
     -webkit-transition: opacity 2s;
 
-}
+} */
 
 .finishedText {
     font-size: 35px;
