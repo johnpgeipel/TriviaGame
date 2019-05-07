@@ -120,13 +120,13 @@ $(document).ready(function() {
         // generateHTML will include the timer and the question for the game
         // this will also need the answers displayed and looped thru
     function generateHTML() {
-        var timeRemainingText = "<p class='timerText text-center'>Time Remaining : <span id='timer'>20</span></p>";
-        var questionText = "<p class='questionText text-center'>" + questionArray[questionCounter].question + "</p>";
+        var timeRemainingText = "<p class='animated fadeInLeft timerText text-center'>Time Remaining : <span id='timer'>20</span></p>";
+        var questionText = "<p class='animated fadeInLeft questionText text-center'>" + questionArray[questionCounter].question + "</p>";
         gameHTML = timeRemainingText + questionText;
         $(".mainArea").html(gameHTML);
         for (var i = 0; i < questionArray[questionCounter].answers.length; i++) {
             var answerButton = $("<button>");
-            answerButton.addClass("answer btn btn-block text-center");
+            answerButton.addClass("animated fadeInUp answer btn btn-block text-center");
             answerButton.attr("isCorrect", questionArray[questionCounter].answers[i].isCorrect);
             answerButton.html(questionArray[questionCounter].answers[i].text);
             $(".mainArea").append(answerButton);
@@ -144,7 +144,7 @@ $(document).ready(function() {
         // there may have to be a seperate function for the timeout if player doesn't answer in time, thus adding to the unanswered count
     function generateWin() {
         correct++;
-        var correctAnswerText = "<p class='correctText text-center'><strong>Correct!</strong></p>";
+        var correctAnswerText = "<p class='animated fadeInUp correctText text-center'><strong>Correct!</strong></p>";
         var imgHTML = "<img class='center-block imgCorrect' src=''>";
         gameHTML = correctAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -153,7 +153,7 @@ $(document).ready(function() {
 
     function generateLoss() {
         incorrect++;
-        var wrongAnswerText = "<p class='wrongText text-center'><strong>Incorrect</strong><br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
+        var wrongAnswerText = "<p class='animated fadeInUp wrongText text-center'><strong>Incorrect</strong><br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
         var imgHTML = "<img class='center-block imgWrong' src=''>";
         gameHTML = wrongAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -163,7 +163,7 @@ $(document).ready(function() {
     function generateLossAtTimeOut() {
         
 		unanswered++;
-		var timeOutText = "<p class='timeOutText text-center'><strong>Time's up!</strong><br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
+		var timeOutText = "<p class='animated fadeInUp timeOutText text-center'><strong>Time's up!</strong><br><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
 		var imgHTML = "<img class='center-block imgWrong' src=''>";
 		gameHTML =  timeOutText + imgHTML;
 		$(".mainArea").html(gameHTML);
@@ -204,11 +204,11 @@ $(document).ready(function() {
     }
     
     function finalScreen() {
-		var finishedText = "<p class='finishedText text-center'>Here's how you did!</p>";
-		var summaryCorrectHTML = "<p class='summaryCorrect text-center'>Correct Answers: " + correct + "</p>";
-		var summaryWrongHTML = "<p class='summaryWrong text-center'>Wrong Answers: " + incorrect + "</p>";
-		var summaryUnansweredHTML = "<p class='summaryUnanswered text-center'>Unanswered: " + unanswered + "</p>";
-		var resetButtonHTML = "<button class='resetButton btn btn-success btn-lg btn-block text-center' type='button'>PLAY AGAIN</button>";
+		var finishedText = "<p class='animated fadeInRight delay-1s finishedText text-center'>Here's how you did!</p>";
+		var summaryCorrectHTML = "<p class='animated fadeInRight delay-2s summaryCorrect text-center'>Correct Answers: " + correct + "</p>";
+		var summaryWrongHTML = "<p class='animated fadeInRight delay-2s summaryWrong text-center'>Wrong Answers: " + incorrect + "</p>";
+		var summaryUnansweredHTML = "<p class='animated fadeInRight delay-2s summaryUnanswered text-center'>Unanswered: " + unanswered + "</p>";
+		var resetButtonHTML = "<button class='animated fadeInUp delay-2s resetButton btn btn-success btn-lg btn-block text-center' type='button'>Play Again</button>";
 		gameHTML = finishedText + summaryCorrectHTML + summaryWrongHTML + summaryUnansweredHTML + resetButtonHTML;
 		$(".mainArea").html(gameHTML);
     }
@@ -237,7 +237,7 @@ $(document).ready(function() {
         // var answerText = answerArray[x];
         // var x = 0;
         
-        var correctText = "<p class='correctText text-center'>The correct answer is: " + answerArray[0] + "</p>";
+        var correctText = "<p class='animated fadeInUp delay-1s correctText text-center'>The correct answer is: " + answerArray[0] + "</p>";
         // var answerText = answerArray[0];
         // var correctHTML = correctText + answerText
         // $(".mainArea").html(correctText);
