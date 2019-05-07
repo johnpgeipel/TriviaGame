@@ -80,6 +80,8 @@ header {
     line-height: 30px;
     margin-bottom: 20px;
     font-family: Montserrat, sans-serif;
+    animation-duration: 0.5s;
+    animation-delay: 0.25s;
 }
 
 
