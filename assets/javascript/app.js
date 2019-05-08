@@ -114,6 +114,7 @@ $(document).ready(function() {
     ]
     var answerArray = ["Roquefort", "It contains maggots.", "Epoisses", "Mimolette", "Upland Creamery Pleasant Ridge Reserve", "Tetilla", "The stomach of an innocent calf", "Milk, starter culture, rennet, salt", "England", "Wisconsin, Baby!"];
 
+    var wittyReply = ["You're a wheel cheese wiz!", "Whey to go!", "You're the Brie's knees!", "Grate job!", "Too Gouda to be true!", "Curd is the word!", "Looking sharp!", "Gouda catch 'em all!", "Couldn't Havarti said it better!", "Gruyere the best!"];   
     // HTML SET_UP Functions:
     // write function for generateHTML
     // generateHTML will set up the page
@@ -144,7 +145,9 @@ $(document).ready(function() {
         // there may have to be a seperate function for the timeout if player doesn't answer in time, thus adding to the unanswered count
     function generateWin() {
         correct++;
-        var correctAnswerText = "<p class='animated fadeInUp correctText text-center'><strong>Correct!</strong></p>";
+        wittyReply.push(wittyReply.shift());
+        var correctAnswerText = "<p class='animated fadeInUp correctText text-center'><strong>Correct!</strong><br><br>" + wittyReply[0] + "<br><br></p>";
+        
         var imgHTML = "<img class='center-block imgCorrect' src=''>";
         gameHTML = correctAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -247,6 +250,7 @@ $(document).ready(function() {
         // console.log(answerText)
         console.log(answerArray)
     }
+    
 
     // When the start button is clicked:
 	$("body").on("click", ".startButton", function(event){ 
@@ -264,6 +268,7 @@ $(document).ready(function() {
             clearInterval(clock);
              generateWin();
              displayAnswer();
+             
              
 		} else { 	// then it's the wrong answer
 			clearInterval(clock);
