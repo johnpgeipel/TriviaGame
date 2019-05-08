@@ -45,9 +45,9 @@ header {
 .timerText, .correctText, .wrongText, .timeOutText {
     font-size: 23px;
     color: white;
-    padding: 15px 0px 10px 0px; 
+    padding: 15px 0px 20px 0px; 
     background-color: #5cb85c;
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: Montserrat, sans-serif;
     line-height: 33px;
     

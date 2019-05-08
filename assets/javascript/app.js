@@ -146,7 +146,7 @@ $(document).ready(function() {
     function generateWin() {
         correct++;
         wittyReply.push(wittyReply.shift());
-        var correctAnswerText = "<p class='animated fadeInUp correctText text-center'><strong>Correct!</strong><br>" + wittyReply[0] + "<br><br></p>";
+        var correctAnswerText = "<p class='animated fadeInUp correctText text-center'><strong>Correct!</strong><br>" + wittyReply[0] + "<br></p>";
         
         var imgHTML = "<img class='center-block imgCorrect' src=''>";
         gameHTML = correctAnswerText + imgHTML;
@@ -156,7 +156,7 @@ $(document).ready(function() {
 
     function generateLoss() {
         incorrect++;
-        var wrongAnswerText = "<p class='animated fadeInUp wrongText text-center'><strong>Incorrect</strong><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
+        var wrongAnswerText = "<p class='animated fadeInUp wrongText text-center'><strong>Incorrect</strong><br>The correct answer is :<br>" + answerArray[0] + "<br></p>";
         var imgHTML = "<img class='center-block imgWrong' src=''>";
         gameHTML = wrongAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
@@ -166,7 +166,7 @@ $(document).ready(function() {
     function generateLossAtTimeOut() {
         
 		unanswered++;
-		var timeOutText = "<p class='animated fadeInUp timeOutText text-center'><strong>Time's up!</strong><br>The correct answer is :<br>" + answerArray[0] + "<br><br></p>";
+		var timeOutText = "<p class='animated fadeInUp timeOutText text-center'><strong>Time's up!</strong><br>The correct answer is :<br>" + answerArray[0] + "<br></p>";
 		var imgHTML = "<img class='center-block imgWrong' src=''>";
 		gameHTML =  timeOutText + imgHTML;
 		$(".mainArea").html(gameHTML);
