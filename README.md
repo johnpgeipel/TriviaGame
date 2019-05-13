@@ -10,6 +10,8 @@ https://johnpgeipel.github.io/TriviaGame
 * If the player **does not choose an answer** within the 20 seconds, it will register as an unanswered question.
 * After the **10 questions**, the results will be displayed for correct, incorrect and unanswered.
 
+Built with HTML, CSS, Animate.css, Bootstrap, JavaScript & JQuery.
+
 **Landing Page**
 ![Landing page](https://github.com/johnpgeipel/TriviaGame/blob/master/assets/images/shot_one.PNG)
 
