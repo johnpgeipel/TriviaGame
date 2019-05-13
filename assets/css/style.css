@@ -1,8 +1,4 @@
-* {
-    /* font-family: 'Cabin', sans-serif; */
-    
-  }
-  
+
 body {
 min-height: 100vh;
 background-image: url("../images/backgound.png");
@@ -21,8 +17,7 @@ font-family: Montserrat, sans-serif;
 header {
     padding: 50px 0px;
     font-size: 85px;
-    color: white;
-    
+    color: white; 
     letter-spacing: 2px;
   }
 
@@ -34,12 +29,6 @@ header {
     background-color: none; 
     padding-bottom: 10px;
     padding: 20px;
-    
-    
-    
-    
-
-
 }
 
 .timerText, .correctText, .wrongText, .timeOutText {
@@ -50,30 +39,23 @@ header {
     border-radius: 8px;
     font-family: Montserrat, sans-serif;
     line-height: 33px;
-    
     animation-duration: 0.5s;
     animation-delay: 0.25s;
-    
-      
-    
 }
 
 .startButton {
     margin-top: 50px;
     font-family: Montserrat, sans-serif;
 }
+
 .answer {
     background-color: white;
     font-family: Montserrat, sans-serif;
-
 }
 
 .answer:hover {
     background-color: rgb(253, 225, 97);
-
 }
-
-
 
 .questionText {
     font-size: 25px;
@@ -85,15 +67,11 @@ header {
     animation-delay: 0.25s;
 }
 
-
-
 #cheese {
     margin-top: 25px;
     text-align: center;
     line-height: 85px;
 }
-
-
 
 .finishedText {
     font-size: 35px;
@@ -107,6 +85,7 @@ header {
     font-size: 20px;
     font-family: Montserrat, sans-serif;
 }
+
 .witty {
     font-size: 25px;
     color: white;
@@ -121,7 +100,6 @@ header {
         background-image: url("../images/backgound_575.png");
         background-size: cover;
         background-repeat: no-repeat;
-       
     }
     #cheese {
         margin-left: 15px;
@@ -133,22 +111,15 @@ header {
     header {
         font-size: 40px;
         padding: 5px 0px 10px 0px;
-        
     }
     body {
-        
         background-image: url("../images/backgound_360.png");
         background-size: cover;
         background-repeat: no-repeat;
-        
-        
     }
     #cheese {
         margin-left: 15px;
         margin-right: 15px;
         padding: 0px;
     }
-   
-    
-
 }
