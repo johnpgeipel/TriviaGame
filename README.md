@@ -5,10 +5,10 @@ https://johnpgeipel.github.io/TriviaGame
 
 * To begin the game, press the start button.
 * The player will have **20 seconds** to answer the question.
-* If the answer is _incorrect_, the correct answer will be displayed and the game will continue.
-* If the answer is _correct_, the player is rewarded with a cheesy pun and the game will continue.
-* If the player _does not choose an answer_ within the 20 seconds, it will register as an unanswered question.
-* After the 10 questions, the results will be displayed for correct, incorrect and unanswered.
+* If the answer is **incorrect**, the correct answer will be displayed and the game will continue.
+* If the answer is **correct**, the player is rewarded with a cheesy pun and the game will continue.
+* If the player **does not choose an answer** within the 20 seconds, it will register as an unanswered question.
+* After the **10 questions**, the results will be displayed for correct, incorrect and unanswered.
 
 **Landing Page**
 ![Landing page](https://github.com/johnpgeipel/TriviaGame/blob/master/assets/images/shot_one.PNG)
