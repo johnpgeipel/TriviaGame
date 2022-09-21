@@ -1,10 +1,4 @@
 $(document).ready(function() {
-
-    
-    // VARIABLES:
-    // declare vars for startScreen,
-    // gameHTML, correct, incorrect, unanswered
-    // questions, counter, clock, selcterAnswer, questionArray
     var startScreen;
 	var gameHTML;
 	var correct = 0;
@@ -13,13 +7,8 @@ $(document).ready(function() {
 	var questionCounter = 0;
 	var counter = 20;
 	var clock;
-    var selecterAnswer;
-    
-
-    // QUESTION_ANSWER ARRAY:
-        // build question array with answer array containing values for answer text & boolean
-        // array should contain question: "lorem", answer: [string]
-        // array should contain the multiple choices and a boolean value 
+    // var selecterAnswer;
+ 
     var questionArray = [
         { 	
             question: 'What was the first name-controlled ("A.O.C.") cheese?',
@@ -111,15 +100,12 @@ $(document).ready(function() {
                 {text: "Wisconsin, Baby!", isCorrect: true}
             ]
         },
-    ]
+    ];
+
     var answerArray = ["Roquefort", "It contains maggots.", "Epoisses", "Mimolette", "Upland Creamery Pleasant Ridge Reserve", "Tetilla", "The stomach of an innocent calf", "Milk, starter culture, rennet, salt", "England", "Wisconsin, Baby!"];
 
     var wittyReply = ["You're a wheel cheese wiz!", "Whey to go!", "You're the Brie's knees!", "Grate job!", "Too Gouda to be true!", "Curd is the word!", "Looking sharp!", "Gouda catch 'em all!", "Couldn't Havarti said it better!", "Gruyere the best!"];   
-    // HTML SET_UP Functions:
-    // write function for generateHTML
-    // generateHTML will set up the page
-        // generateHTML will include the timer and the question for the game
-        // this will also need the answers displayed and looped thru
+    
     function generateHTML() {
         var timeRemainingText = "<p class='animated fadeInLeft timerText text-center'>Time Remaining : <span id='timer'>20</span></p>";
         var questionText = "<p class='animated fadeInLeft questionText text-center'>" + questionArray[questionCounter].question + "</p>";
@@ -131,18 +117,9 @@ $(document).ready(function() {
             answerButton.attr("isCorrect", questionArray[questionCounter].answers[i].isCorrect);
             answerButton.html(questionArray[questionCounter].answers[i].text);
             $(".mainArea").append(answerButton);
-            
         }
-        
-    }
-
-     // WIN & LOSS Funcitons:
-        // write functions for the outcomes of wins and losses
-        // these will increase the win/loss counters by ++ with every guess, or timeout
-        // these will also generate text to notify player if answer was correct/incorrect
-        // these will also generate an image
-        // these should also contain the setTimeOut for the pause between plays
-        // there may have to be a seperate function for the timeout if player doesn't answer in time, thus adding to the unanswered count
+    };
+     
     function generateWin() {
         correct++;
         wittyReply.push(wittyReply.shift());
@@ -152,7 +129,7 @@ $(document).ready(function() {
         gameHTML = correctAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
         setTimeout(nextDisplay, 3000); 
-    }
+    };
 
     function generateLoss() {
         incorrect++;
@@ -161,10 +138,8 @@ $(document).ready(function() {
         gameHTML = wrongAnswerText + imgHTML;
         $(".mainArea").html(gameHTML);
         setTimeout(nextDisplay, 3000); 
-    }
-    // TIMEOUT Function... for unanswered questions
+    };
     function generateLossAtTimeOut() {
-        
 		unanswered++;
 		var timeOutText = "<p class='animated fadeInUp timeOutText text-center'><strong>Time's up!</strong><br>The correct answer is :<br>" + answerArray[0] + "<br></p>";
 		var imgHTML = "<img class='center-block imgWrong' src=''>";
@@ -173,15 +148,8 @@ $(document).ready(function() {
         setTimeout(nextDisplay, 3000);
         displayAnswer();
         console.log(answerArray)
-        
-        
-	}
+	};
 
-    // TIMER Function:
-        // write funciton for the timer
-            // timer will need if/else for stopping, when player answers
-            // timer will need reset or stop at loss
-            // will need to generate text to html
     function timer() {
         clock = setInterval(twentySeconds, 1000);
         function twentySeconds() {
@@ -193,7 +161,8 @@ $(document).ready(function() {
             }
             $("#timer").html(counter);
         }
-    }
+    };
+
     function nextDisplay() {
 		if (questionCounter < questionArray.length - 1) {
 			questionCounter++;
@@ -203,8 +172,7 @@ $(document).ready(function() {
 		} else {
 			finalScreen();
         }
-        
-    }
+    };
     
     function finalScreen() {
 		var finishedText = "<p class='animated fadeInRight delay-1s finishedText text-center'>Here's how you did!</p>";
@@ -214,7 +182,7 @@ $(document).ready(function() {
 		var resetButtonHTML = "<button class='animated fadeInUp delay-2s resetButton btn btn-success btn-lg btn-block text-center' type='button'>Play Again</button>";
 		gameHTML = finishedText + summaryCorrectHTML + summaryWrongHTML + summaryUnansweredHTML + resetButtonHTML;
 		$(".mainArea").html(gameHTML);
-    }
+    };
     
     function resetGame() {
 		questionCounter = 0;
@@ -224,75 +192,43 @@ $(document).ready(function() {
 		counter = 20;
 		generateHTML();
 		timer();
-	}
+	};
 
-	// Function that creates the start button and initial screen
 	function initialScreen() {
 		var initialText = "<p class='initialText text-center'>A quiz to test your knowledge of all things cheese!</p> <p class='initialText text-center'>There are 10 questions total and you will have 20 seconds to answer each one. Good luck!</p>";
 		var startButtonHTML = "<button class='startButton btn btn-success btn-lg btn-block text-center' type='button'>Start Quiz</button>";
 		startScreen = initialText + startButtonHTML;
 		$(".mainArea").html(startScreen);
-    }
-     // BUTTON Functions:
-        // will need seperate click event functions for startGame, answer, resetGame
+    };
+     
     function displayAnswer() {
-        // for (var i = 0; i < answerArray.length; i++);
-        // var answerText = answerArray[x];
-        // var x = 0;
-        
         var correctText = "<p class='animated fadeInUp delay-1s correctText text-center'>The correct answer is: " + answerArray[0] + "</p>";
-        // var answerText = answerArray[0];
-        // var correctHTML = correctText + answerText
-        // $(".mainArea").html(correctText);
-        
-        // console.log(i);
         answerArray.push(answerArray.shift());
-        // console.log(answerText)
         console.log(answerArray)
-    }
-    
+    };
 
-    // When the start button is clicked:
 	$("body").on("click", ".startButton", function(event){ 
 		generateHTML();
 		timer();
 	});
 
-	// When an answer is clicked:
 	$("body").on("click", ".answer", function(event){
         selectedAnswer = $(this).attr("isCorrect");
-        
-		
 
-		if (selectedAnswer === "true") { // evaluates if this is the correct answer
+		if (selectedAnswer === "true") { 
             clearInterval(clock);
              generateWin();
              displayAnswer();
-             
-             
-		} else { 	// then it's the wrong answer
+		} else { 
 			clearInterval(clock);
             generateLoss();
             displayAnswer();
-            
-            
-		}
-
+		};
 	}); 
     
-    
-	// When the Play Again button is clicked:
 	$("body").on("click", ".resetButton", function(event){
         resetGame();
-        
-        
 	}); 
 
     initialScreen();
-    
-    
-    
-    console.log($("#cheese"))
-    
-   
 });
